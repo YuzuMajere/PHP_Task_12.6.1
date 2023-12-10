@@ -10,7 +10,7 @@ $mM_M;
 $mM;
 $perfectPartnerArray = [];
 
-function getPartsFromFullNameFn() {
+function getPartsFromFullName() {
     require 'example_persons_array.php';
     global $partsFromFullNameArray;
     $array = $example_persons_array;
@@ -39,13 +39,13 @@ $partsFromFullNameArray[$i] = array_combine($arrayForMerge[$i], $getPartsFromFul
 return $partsFromFullNameArray;
 };
 
-getPartsFromFullNameFn();
+getPartsFromFullName();
 //* printing name parts
 // var_dump($partsFromFullNameArray);
 
 //! ---------------------> FullNameFromParts
 
-function getFullNameFromPartsFN () {
+function getFullNameFromParts () {
     global $partsFromFullNameArray;
     global $fullNameFromPartsArray;
     $n = count($partsFromFullNameArray);
@@ -56,14 +56,14 @@ function getFullNameFromPartsFN () {
     return $fullNameFromPartsArray;
 };
 
-getFullNameFromPartsFN();
+getFullNameFromParts();
 //* printing full names
 // var_dump($fullNameFromPartsArray);
 
 
 //! --------------------> shortName
 
-function shortNameFN () {
+function shortName () {
     global $partsFromFullNameArray;
     global $shortNameArray;
     $n = count($partsFromFullNameArray);
@@ -73,13 +73,13 @@ function shortNameFN () {
     return $shortNameArray;
 
 };
-shortNameFN();
+shortName();
 //* printing short names
 // var_dump($shortNameArray);
 
 //! ----------------------> getGenderFromName
 
-function getGenderFromNameFN () {
+function getGenderFromName () {
     global $partsFromFullNameArray;
     global $genderArray;
     global $fullNameFromPartsArray;
@@ -116,13 +116,13 @@ function getGenderFromNameFN () {
 return $genderArray;
 }
 
-getGenderFromNameFN();
+getGenderFromName();
 //*printing gender affiliation
 // var_dump($genderArray);
 
 //! --------------> getGenderDescription
 
-function getGenderDescriptionFN () {
+function getGenderDescription () {
     global $genderArray;
     global $mM_M;
     global $mM;
@@ -149,7 +149,7 @@ function getGenderDescriptionFN () {
     return array($mM, $fF, $uU);
 }
 
-list($x,$y,$z) = getGenderDescriptionFN();
+list($x,$y,$z) = getGenderDescription();
 
 //* echoing gender% results
 // echo('Гендерный состав аудитории:' . "\n");
@@ -161,7 +161,7 @@ list($x,$y,$z) = getGenderDescriptionFN();
 
 //! ---------------> getPerfectPartner
 
-function getPerfectPartnerFN () {
+function getPerfectPartner () {
     global $perfectPartnerArray;
     global $shortNameArray;
     global $genderArray;
@@ -189,7 +189,7 @@ function getPerfectPartnerFN () {
     }
 };
 
-//* getPerfectPartnerFN function launch and echo within the function ---->
-// getPerfectPartnerFN();
+//* getPerfectPartner function launch and echo within the function ---->
+// getPerfectPartner();
 
 ?>
